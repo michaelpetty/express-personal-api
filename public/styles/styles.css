@@ -37,10 +37,9 @@ h3 {
     border-color: #212a97;
 }
 .img {
-    position: relative;
-    float: left;
     width:  100px;
     height: 100px;
+    margin: 20px auto;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;
