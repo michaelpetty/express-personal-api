@@ -9,7 +9,7 @@ const PlaySchema = new Schema({
     default: Date.now
   },
   role: String,
-  lead: Boolean,
+  isMusical: Boolean,
   image: String
 })
 

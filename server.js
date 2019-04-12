@@ -102,7 +102,7 @@ app.get('/api/plays/:playId', (req, res) => {
 
 // create new play CREATE
 app.post('/api/plays', (req, res) => {
-  db.Play.create(newPlay, (err, savedPlay) => {
+  db.Play.create(req.body, (err, savedPlay) => {
     if (err) return res.json({error: err});
     res.json(savedPlay);
   })
@@ -120,7 +120,7 @@ app.put('/api/plays/:playId', (req,res) => {
 app.delete('/api/plays/:playId', (req, res) => {
   db.Play.findByIdAndDelete(req.params.playId, (err, play) => {
     if (err) return res.json({error: err});
-    res.json({"Removed play": play});
+    res.json({removed: play});
   })
 });
 
