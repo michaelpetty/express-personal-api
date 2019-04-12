@@ -80,6 +80,16 @@ app.get('/api/profile', (req, res) => {
   })
 });
 
+// get all plays INDEX
+app.get('/api/plays', (req, res) => {
+  db.Play.find()
+    .exec((err, allPlays) => {
+    if (err) return res.json({error: err});
+    res.json({data: allPlays});
+  })
+});
+
+
 /**********
  * SERVER *
  **********/

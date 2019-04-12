@@ -3,9 +3,11 @@ const Schema = mongoose.Schema;
 
 const PlaySchema = new Schema({
   title: String,
-  author: String,
   theatre: String,
-  openingNight: Date,
+  openingNight: {
+    type: Date,
+    default: Date.now
+  },
   role: String,
   lead: Boolean,
   image: String
