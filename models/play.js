@@ -10,7 +10,10 @@ const PlaySchema = new Schema({
   },
   role: String,
   isMusical: Boolean,
-  image: String
+  image: {
+    type: String,
+    default: '/images/playbill.jpg'
+  }
 })
 
 const Play = mongoose.model('Play', PlaySchema);

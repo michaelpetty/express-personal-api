@@ -26,6 +26,7 @@ $(document).ready(function(){
     return `<div class="col">
             <h3>${play.title}</h3>
               at ${play.theatre}<br/>
+              <div class="img" style="background-image: url(${play.image})"></div>              
               <div class="btn-group">
                 <button type="button" name="update" class="updateBtn btn btn-info btn-sm " data-id=${play._id}>Update</button>
                 <button type="button" name="delete" class="deleteBtn btn btn-danger btn-sm " data-id=${play._id}>Delete</button>

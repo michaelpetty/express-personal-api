@@ -8,7 +8,6 @@ const seedPlays = [
     theatre: "Slidell Little Theatre",
     role: "Chorus",
     isMusical: true,
-    image: "some img.jpg"
   },
   {
     title: "Snoopy!",
@@ -16,7 +15,7 @@ const seedPlays = [
     role: "Linus",
     isMusical: true,
     openingNight: "05-02-1986",
-    image: "some img.jpg"
+    image: "/images/linus.jpg"
   },
   {
     title: "Oklahoma",
@@ -24,7 +23,6 @@ const seedPlays = [
     role: "Chorus",
     isMusical: true,
     openingNight: "03-12-1986",
-    image: "some img.jpg"
   },
   {
     title: "Wait Until Dark",
@@ -32,7 +30,6 @@ const seedPlays = [
     role: "Mike Talman",
     openingNight: "10-25-1986",
     isMusical: false,
-    image: "some img.jpg"
   },
   {
     title: "Bring Back Birdie",
@@ -40,7 +37,7 @@ const seedPlays = [
     role: "Albert F. Peterson",
     isMusical: true,
     openingNight: "06-22-1985",
-    image: "some img.jpg"
+    image: "/images/birdie.jpg"
   },
   {
     title: "Dames at Sea",
@@ -48,7 +45,7 @@ const seedPlays = [
     role: "Lucky",
     isMusical: true,
     openingNight: "06-25-1984",
-    image: "some img.jpg"
+    image: "/images/dames.jpg"
   },
   {
     title: "The Diary of Anne Frank",
@@ -56,7 +53,7 @@ const seedPlays = [
     role: "Albert Dussell",
     isMusical: false,
     openingNight: "10-26-1985",
-    image: "some img.jpg"
+    image: "/images/annefrank.jpg"
   },
   {
     title: "Up the Down Staircase",
@@ -64,7 +61,6 @@ const seedPlays = [
     role: "Joey",
     isMusical: false,
     openingNight: "03-12-1984",
-    image: "some img.jpg"
   },
   {
     title: "The Most Happy Fella",
@@ -72,7 +68,6 @@ const seedPlays = [
     role: "Chorus",
     isMusical: true,
     openingNight: "05-02-1983",
-    image: "some img.jpg"
   },
   {
     title: "The Mouse that Roared",
@@ -80,7 +75,6 @@ const seedPlays = [
     role: "General",
     isMusical: false,
     openingNight: "03-16-1983",
-    image: "some img.jpg"
   },
   {
     title: "Carousel",
@@ -88,7 +82,6 @@ const seedPlays = [
     role: "Chorus",
     isMusical: true,
     openingNight: "05-10-1984",
-    image: "some img.jpg"
   },
   {
     title: "Oliver",
@@ -96,7 +89,6 @@ const seedPlays = [
     role: "Chorus",
     isMusical: true,
     openingNight: "09-08-1981",
-    image: "some img.jpg"
   }
 ];
 
