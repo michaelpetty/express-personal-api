@@ -66,6 +66,7 @@ app.get('/api', (req, res) => {
   })
 });
 
+// profile data
 app.get('/api/profile', (req, res) => {
   res.json({
     name: "Michael Petry",
@@ -88,6 +89,41 @@ app.get('/api/plays', (req, res) => {
     res.json({data: allPlays});
   })
 });
+
+
+// get one play SHOW
+app.get('/api/plays/:playId', (req, res) => {
+  db.Play.findById(req.params.playId)
+    .exec((err, foundPlay) => {
+    if (err) return res.json({error: err});
+    res.json(foundPlay);
+  })
+});
+
+// create new play CREATE
+app.post('/api/plays', (req, res) => {
+  db.Play.create(newPlay, (err, savedPlay) => {
+    if (err) return res.json({error: err});
+    res.json(savedPlay);
+  })
+});
+
+// update play
+app.put('/api/plays/:playId', (req,res) => {
+  db.Play.findByIdAndUpdate(req.params.playId, req.body, (err, upPlay) => {
+    if (err) return res.json({error: err});
+    res.json(upPlay);
+  })
+});
+
+// delete play
+app.delete('/api/plays/:playId', (req, res) => {
+  db.Play.findByIdAndDelete(req.params.playId, (err, play) => {
+    if (err) return res.json({error: err});
+    res.json({"Removed play": play});
+  })
+});
+
 
 
 /**********
