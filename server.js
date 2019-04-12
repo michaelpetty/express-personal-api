@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// const db = require('./models');
+const db = require('./models');
 
 /**********
  * ROUTES *
@@ -57,11 +57,25 @@ app.get('/api', (req, res) => {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"},
-      {method: "GET", path: "/api/shows", description: "Index of all theatre productions"},
-      {method: "GET", path: "/api/shows/:showId", description: "Show specifics of one theatre production"},
-      {method: "POST", path: "/api/shows", description: "Create a new theatre production"},
-      {method: "PUT", path: "/api/shows/:showId", description: "Update one specific theatre production"},
-      {method: "DELETE", path: "/api/shows/:showId", description: "Delete one theatre production"}
+      {method: "GET", path: "/api/plays", description: "Index of all theatre productions"},
+      {method: "GET", path: "/api/plays/:playId", description: "Show specifics of one theatre production"},
+      {method: "POST", path: "/api/plays", description: "Create a new theatre production"},
+      {method: "PUT", path: "/api/plays/:playId", description: "Update one specific theatre production"},
+      {method: "DELETE", path: "/api/plays/:playId", description: "Delete one theatre production"}
+    ]
+  })
+});
+
+app.get('/api/profile', (req, res) => {
+  res.json({
+    name: "Michael Petry",
+    githubUsername: "michaelpetty",
+    githubLink: "https://github.com/michaelpetty",
+    githubProfileImage: "https://avatars3.githubusercontent.com/u/15915049",
+    personalSiteLink: "http://codetojoy.tech",
+    currentCity: "San Francisco",
+    pets: [
+      {name: "Moxie", type: "dog", age: "10"}
     ]
   })
 });
