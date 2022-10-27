@@ -1,6 +1,6 @@
 // This file allows us to seed our application with data
 // simply run: `node seed.js` from the root of this project folder.
-const db = require('./models');
+const db = require('./models/index.js')
 
 const seedPlays = [
   {
@@ -101,9 +101,10 @@ db.Play.deleteMany({}, (err, deletedPlays) => {
   db.Play.create(seedPlays, (err, createdPlays) => {
     if (err) {
       console.log(err);
-      return;
+      process.exit()
     }
     console.log(`recreated all plays: ${createdPlays}`);
     console.log(`created ${createdPlays.length} plays`);
+    process.exit()
   })
 })
