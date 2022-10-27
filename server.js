@@ -84,25 +84,11 @@ app.get('/api/profile', (req, res) => {
 
 
 // get all plays INDEX
-// app.get('/api/plays', (req, res) => {
-//   db.Play.find()
-//     .exec((err, allPlays) => {
-//     if (err) return res.json({error: err});
-//     res.json({data: allPlays});
-//   })
-// });
-
 app.get('/api/plays', playCtl.findAll);
 
 
 // get one play SHOW
-app.get('/api/plays/:playId', (req, res) => {
-  db.Play.findById(req.params.playId)
-    .exec((err, foundPlay) => {
-    if (err) return res.json({error: err});
-    res.json(foundPlay);
-  })
-});
+app.get('/api/plays/:playId', playCtl.findOne);
 
 // create new play CREATE
 app.post('/api/plays', playCtl.createOne);

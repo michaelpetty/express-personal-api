@@ -5,8 +5,8 @@ beforeAll(async () => await db.connect())
 afterEach(async () => await db.dropCollections())
 afterAll(async () => await db.close())
 
-const mockRequest = (body) => {
-    return {body}
+const mockRequest = (body, params) => {
+    return {body, params}
 }
 const mockResponse = () => {
     const res = {}
@@ -128,10 +128,25 @@ describe('Play Model', () => {
         expect(newPlay._id).toBeDefined()
         expect(newPlay.image).not.toBe('/images/playbill.jpg')
     })
+    it('should create many plays from array of obj', async () => {
+        let createdPlays = await playCtl.createMany(mockRequest(seedPlays), mockResponse())
+        expect(createdPlays).toHaveLength(seedPlays.length)
+    })
     it('should find all plays', async () => {
         // seed temp db
         await playCtl.createMany(mockRequest(seedPlays), mockResponse())
         let allPlays = await playCtl.findAll(mockRequest(), mockResponse())
+        expect(allPlays.data).toBeInstanceOf(Array)
         expect(allPlays.data).toHaveLength(seedPlays.length)
+    })
+    it('should find one play by id', async () => {
+        let createdPlays = await playCtl.createMany(mockRequest(seedPlays), mockResponse())
+        let play = createdPlays.filter(play => play.title === 'Oklahoma')[0]
+        console.log(play)
+        let foundPlay = await playCtl.findOne(mockRequest('', {playId: play._id}), mockResponse())
+        console.log('foundPlay: ',foundPlay)
+        expect(foundPlay).toBeInstanceOf(Object)
+        expect(foundPlay).toHaveProperty('role', 'Chorus')
+        expect(foundPlay.isMusical).toStrictEqual(true)
     })
 })
