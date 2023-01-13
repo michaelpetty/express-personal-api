@@ -1,21 +1,17 @@
 // require express and other modules
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const cors = require('cors')
+const PORT = process.env.PORT || 4000
 const playCtl = require('./controllers/playController')
 
 // parse incoming urlencoded form data
 // and populate the req.body object
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // allow cross origin requests (optional)
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors())
 
 /************
  * DATABASE *
@@ -116,6 +112,6 @@ app.delete('/api/plays/:playId', (req, res) => {
  **********/
 
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Personal API server is up and running');
+app.listen(PORT , () => {
+  console.log(`Personal API server is up and running on PORT: ${PORT}`);
 });

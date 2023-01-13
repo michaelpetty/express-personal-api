@@ -1,7 +1,7 @@
 {
   "name": "express-personal-api",
   "version": "1.0.0",
-  "description": "Build an API about yourself",
+  "description": "Simple MongoDB + Express API",
   "main": "server.js",
   "scripts": {
     "test": "jest --testEnvironment=node --runInBand --detectOpenHandles ./tests"
@@ -10,19 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/SF-WDI-LABS/express-personal-api.git"
   },
-  "author": "GA SF WDI",
+  "author": "Michael Petty",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SF-WDI-LABS/express-personal-api/issues"
+    "url": "https://github.com/michaelpetty/express-personal-api/issues"
   },
-  "homepage": "https://github.com/SF-WDI-LABS/express-personal-api",
+  "homepage": "https://github.com/michaelpetty/express-personal-api",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mongoose": "^5.1.2"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3"
   },
   "devDependencies": {
-    "jest": "^29.2.2",
-    "mongodb-memory-server": "^8.9.3"
+    "jest": "^29.3.1",
+    "mongodb-memory-server": "^8.11.1"
   }
 }

@@ -142,9 +142,7 @@ describe('Play Model', () => {
     it('should find one play by id', async () => {
         let createdPlays = await playCtl.createMany(mockRequest(seedPlays), mockResponse())
         let play = createdPlays.filter(play => play.title === 'Oklahoma')[0]
-        console.log(play)
         let foundPlay = await playCtl.findOne(mockRequest('', {playId: play._id}), mockResponse())
-        console.log('foundPlay: ',foundPlay)
         expect(foundPlay).toBeInstanceOf(Object)
         expect(foundPlay).toHaveProperty('role', 'Chorus')
         expect(foundPlay.isMusical).toStrictEqual(true)
